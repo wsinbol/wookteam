@@ -1,0 +1,152 @@
+ _                               _  _____ 
+| |                             | |/ ____|
+| |     __ _ _ __ __ ___   _____| | (___  
+| |    / _` | '__/ _` \ \ / / _ \ |\___ \ 
+| |___| (_| | | | (_| |\ V /  __/ |____) |
+|______\__,_|_|  \__,_| \_/ \___|_|_____/ 
+                                           
+Speed up your Laravel/Lumen
+>>> Components
++---------------------------+---------+
+| Component                 | Version |
++---------------------------+---------+
+| PHP                       | 7.3.20  |
+| Swoole                    | 4.5.2   |
+| LaravelS                  | 3.7.6   |
+| Laravel Framework [local] | 7.22.4  |
++---------------------------+---------+
+>>> Protocols
++----------------+--------+-------------------------------+----------------+
+| Protocol       | Status | Handler                       | Listen At      |
++----------------+--------+-------------------------------+----------------+
+| Main HTTP      | On     | Laravel Framework             | 127.0.0.1:5200 |
+| Main WebSocket | On     | App\Services\WebSocketService | 127.0.0.1:5200 |
++----------------+--------+-------------------------------+----------------+
+>>> Feedback: https://github.com/hhxsv5/laravel-s
+[2020-08-03 12:40:21] [TRACE] Swoole is running, press Ctrl+C to quit.
+[2020-09-26 09:55:57] [ERROR] onRequest: Uncaught exception "ErrorException"([0]include(/www/wwwroot/team.yunmell.cn/vendor/composer/../monolog/monolog/src/Monolog/Handler/StreamHandler.php): failed to open stream: No such file or directory) at /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php:444, 
+#0 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/www/ww...', '/www/wwwroot/te...', 444, Array)
+#1 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(444): include()
+#2 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/www/wwwroot/te...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Monolog\\Handler...')
+#4 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(168): spl_autoload_call('Monolog\\Handler...')
+#5 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(122): Illuminate\Log\LogManager->createEmergencyLogger()
+#6 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(98): Illuminate\Log\LogManager->get('stack')
+#7 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(547): Illuminate\Log\LogManager->driver()
+#8 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(122): Illuminate\Log\LogManager->error('include(/www/ww...', Array)
+#9 /www/wwwroot/team.yunmell.cn/app/Exceptions/Handler.php(39): Illuminate\Foundation\Exceptions\Handler->report(Object(ErrorException))
+#10 /www/wwwroot/team.yunmell.cn/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(57): App\Exceptions\Handler->report(Object(ErrorException))
+#11 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(403): NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler->report(Object(ErrorException))
+#12 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->reportException(Object(ErrorException))
+#13 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Illuminate/Laravel.php(153): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/LaravelS.php(209): Hhxsv5\LaravelS\Illuminate\Laravel->handleDynamic(Object(Illuminate\Http\Request))
+#15 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/LaravelS.php(155): Hhxsv5\LaravelS\LaravelS->handleDynamicResource(Object(Hhxsv5\LaravelS\Illuminate\Laravel), Object(Illuminate\Http\Request), Object(Swoole\Http\Response))
+#16 [internal function]: Hhxsv5\LaravelS\LaravelS->onRequest(Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#17 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Swoole/Server.php(347): Swoole\Server->start()
+#18 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Console/Portal.php(158): Hhxsv5\LaravelS\Swoole\Server->run()
+#19 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Console/Portal.php(59): Hhxsv5\LaravelS\Console\Portal->start()
+#20 /www/wwwroot/team.yunmell.cn/vendor/symfony/console/Command/Command.php(258): Hhxsv5\LaravelS\Console\Portal->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /www/wwwroot/team.yunmell.cn/bin/laravels(164): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 {main}
+[2020-09-26 09:55:58] [ERROR] onRequest: Uncaught exception "ErrorException"([0]include(/www/wwwroot/team.yunmell.cn/vendor/composer/../monolog/monolog/src/Monolog/Handler/StreamHandler.php): failed to open stream: No such file or directory) at /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php:444, 
+#0 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/www/ww...', '/www/wwwroot/te...', 444, Array)
+#1 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(444): include()
+#2 /www/wwwroot/team.yunmell.cn/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/www/wwwroot/te...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('Monolog\\Handler...')
+#4 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(168): spl_autoload_call('Monolog\\Handler...')
+#5 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(122): Illuminate\Log\LogManager->createEmergencyLogger()
+#6 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(98): Illuminate\Log\LogManager->get('stack')
+#7 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(547): Illuminate\Log\LogManager->driver()
+#8 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(122): Illuminate\Log\LogManager->error('include(/www/ww...', Array)
+#9 /www/wwwroot/team.yunmell.cn/app/Exceptions/Handler.php(39): Illuminate\Foundation\Exceptions\Handler->report(Object(ErrorException))
+#10 /www/wwwroot/team.yunmell.cn/vendor/nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php(57): App\Exceptions\Handler->report(Object(ErrorException))
+#11 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(403): NunoMaduro\Collision\Adapters\Laravel\ExceptionHandler->report(Object(ErrorException))
+#12 /www/wwwroot/team.yunmell.cn/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(111): Illuminate\Foundation\Http\Kernel->reportException(Object(ErrorException))
+#13 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Illuminate/Laravel.php(153): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#14 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/LaravelS.php(209): Hhxsv5\LaravelS\Illuminate\Laravel->handleDynamic(Object(Illuminate\Http\Request))
+#15 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/LaravelS.php(155): Hhxsv5\LaravelS\LaravelS->handleDynamicResource(Object(Hhxsv5\LaravelS\Illuminate\Laravel), Object(Illuminate\Http\Request), Object(Swoole\Http\Response))
+#16 [internal function]: Hhxsv5\LaravelS\LaravelS->onRequest(Object(Swoole\Http\Request), Object(Swoole\Http\Response))
+#17 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Swoole/Server.php(347): Swoole\Server->start()
+#18 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Console/Portal.php(158): Hhxsv5\LaravelS\Swoole\Server->run()
+#19 /www/wwwroot/team.yunmell.cn/vendor/hhxsv5/laravel-s/src/Console/Portal.php(59): Hhxsv5\LaravelS\Console\Portal->start()
+#20 /www/wwwroot/team.yunmell.cn/vendor/symfony/console/Command/Command.php(258): Hhxsv5\LaravelS\Console\Portal->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /www/wwwroot/team.yunmell.cn/bin/laravels(164): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 {main}
+ _                               _  _____ 
+| |                             | |/ ____|
+| |     __ _ _ __ __ ___   _____| | (___  
+| |    / _` | '__/ _` \ \ / / _ \ |\___ \ 
+| |___| (_| | | | (_| |\ V /  __/ |____) |
+|______\__,_|_|  \__,_| \_/ \___|_|_____/ 
+                                           
+Speed up your Laravel/Lumen
+>>> Components
++---------------------------+---------+
+| Component                 | Version |
++---------------------------+---------+
+| PHP                       | 7.3.20  |
+| Swoole                    | 4.5.2   |
+| LaravelS                  | 3.7.6   |
+| Laravel Framework [local] | 7.22.4  |
++---------------------------+---------+
+>>> Protocols
++----------------+--------+-------------------------------+----------------+
+| Protocol       | Status | Handler                       | Listen At      |
++----------------+--------+-------------------------------+----------------+
+| Main HTTP      | On     | Laravel Framework             | 127.0.0.1:5200 |
+| Main WebSocket | On     | App\Services\WebSocketService | 127.0.0.1:5200 |
++----------------+--------+-------------------------------+----------------+
+>>> Feedback: https://github.com/hhxsv5/laravel-s
+[2020-09-26 10:18:58] [TRACE] Swoole is running, press Ctrl+C to quit.
+ _                               _  _____ 
+| |                             | |/ ____|
+| |     __ _ _ __ __ ___   _____| | (___  
+| |    / _` | '__/ _` \ \ / / _ \ |\___ \ 
+| |___| (_| | | | (_| |\ V /  __/ |____) |
+|______\__,_|_|  \__,_| \_/ \___|_|_____/ 
+                                           
+Speed up your Laravel/Lumen
+>>> Components
++---------------------------+---------+
+| Component                 | Version |
++---------------------------+---------+
+| PHP                       | 7.3.20  |
+| Swoole                    | 4.5.2   |
+| LaravelS                  | 3.7.8   |
+| Laravel Framework [local] | 7.28.3  |
++---------------------------+---------+
+>>> Protocols
++----------------+--------+-------------------------------+----------------+
+| Protocol       | Status | Handler                       | Listen At      |
++----------------+--------+-------------------------------+----------------+
+| Main HTTP      | On     | Laravel Framework             | 127.0.0.1:5200 |
+| Main WebSocket | On     | App\Services\WebSocketService | 127.0.0.1:5200 |
++----------------+--------+-------------------------------+----------------+
+>>> Feedback: https://github.com/hhxsv5/laravel-s
+[2020-09-26 18:58:21] [TRACE] Swoole is running, press Ctrl+C to quit.
+ _                               _  _____ 
+| |                             | |/ ____|
+| |     __ _ _ __ __ ___   _____| | (___  
+| |    / _` | '__/ _` \ \ / / _ \ |\___ \ 
+| |___| (_| | | | (_| |\ V /  __/ |____) |
+|______\__,_|_|  \__,_| \_/ \___|_|_____/ 
+                                           
+Speed up your Laravel/Lumen
+>>> Components
++---------------------------+---------+
+| Component                 | Version |
++---------------------------+---------+
+| PHP                       | 7.3.20  |
+| Swoole                    | 4.5.2   |
+| LaravelS                  | 3.7.8   |
+| Laravel Framework [local] | 7.28.3  |
++---------------------------+---------+
+>>> Protocols
++----------------+--------+-------------------------------+----------------+
+| Protocol       | Status | Handler                       | Listen At      |
++----------------+--------+-------------------------------+----------------+
+| Main HTTP      | On     | Laravel Framework             | 127.0.0.1:5200 |
+| Main WebSocket | On     | App\Services\WebSocketService | 127.0.0.1:5200 |
++----------------+--------+-------------------------------+----------------+
+>>> Feedback: https://github.com/hhxsv5/laravel-s
+[2020-09-26 19:26:29] [TRACE] Swoole is running, press Ctrl+C to quit.
